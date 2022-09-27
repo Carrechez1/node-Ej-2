@@ -82,3 +82,7 @@ insert into transactions (id, account_ori, account_des, amount, transaction_type
 
 
 select clients.id, clients.first_name, clients.last_name, clients.email, accounts.account_no, accounts.balance  from accounts right join clients on clients.id = accounts.client_id ;
+
+select accounts.account_no as cuenta, accounts.client_id as id_cliente, account_types.name from accounts left join account_types on accounts.id=account_types.id;
+
+select transactions.id as transaccion, transactions.amount as monto, transactions_types.name as tipo_transaccion from transactions inner join transactions_types on transactions.id=transactions_types.id;
